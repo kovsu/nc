@@ -1,0 +1,50 @@
+{
+  "name": "@kovsu/nc",
+  "type": "module",
+  "author": "Konv Suu <2583695112@qq.com>",
+  "description": "🧁 Utils library for npm.",
+  "version": "0.1.0",
+  "license": "MIT",
+  "keywords": [
+    "typescript",
+    "npm",
+    "package"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "unbuild --stub",
+    "build": "unbuild",
+    "test": "vitest",
+    "nc": "node ./bin/cli.js"
+  },
+  "bin": {
+    "nc": "./bin/cli.js"
+  },
+  "devDependencies": {
+    "@kovsu/eslint-config-ts": "^0.2.0",
+    "@types/node": "^18.11.14",
+    "eslint": "^8.29.0",
+    "typescript": "^4.9.3",
+    "unbuild": "^1.0.1",
+    "vitest": "^0.25.3"
+  },
+  "eslintConfig": {
+    "extends": "@kovsu/eslint-config-ts"
+  },
+  "dependencies": {
+    "cac": "^6.7.14",
+    "pkg-types": "^1.0.1"
+  }
+}
