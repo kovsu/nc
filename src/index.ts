@@ -1,8 +1,7 @@
 import cac from "cac";
-import pc from "picocolors";
-import emoji from "node-emoji";
 import { version } from "./utils/getVersion";
-import { check } from "./utils/checkName";
+import { checkName } from "./utils/checkName";
+import { checkTypes, checkTypesByName } from "./utils/checkTypes";
 
 const cli = cac();
 
@@ -13,20 +12,33 @@ cli.on("command:*", () => {
 
 export async function main() {
   cli.option("-c", "Check dependencies");
-  cli.option("-t", "Check type declarations");
-  cli.option("-p <pkgName>", "Provide a package name");
+
+  cli
+    .command("[...pkgName]", "Provide a package name")
+    .option("-t", "Check types")
+    .option("-p", "Check package name")
+    .action(async (pkgName, options) => {
+      if (options.p) {
+        let str = "\n";
+
+        for (const p of pkgName)
+          str += await checkName(p);
+
+        console.log(str);
+      }
+
+      if (options.t && pkgName.length > 0) {
+        const o = await checkTypesByName(pkgName);
+        console.log(o);
+      }
+      else if (options.t && pkgName.length === 0) {
+        const o = await checkTypes();
+        console.log(o);
+      }
+    });
 
   cli.help();
   cli.version(await version());
 
-  const parsed = cli.parse();
-
-  if (parsed.options.p) {
-    // true => invalid pkg name
-    const res = await check(parsed.options.p);
-    if (!res)
-      console.log(pc.green(`${emoji.get(":heart_eyes:")} Valid package name`));
-    else
-      console.log(pc.red(`${emoji.get(":persevere:")} Invalid package name`));
-  }
+  cli.parse();
 }

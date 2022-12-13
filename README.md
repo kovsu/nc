@@ -12,7 +12,5 @@ Check whether the dependencies in package.json require type declarations.
 
 Check whether the package name already exists in npm.
 
-<img src="./snapshot/nc-p.gif" />
-
 
 
