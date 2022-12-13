@@ -2,7 +2,7 @@
   "name": "@kovsu/nc",
   "type": "module",
   "author": "Konv Suu <2583695112@qq.com>",
-  "description": "🧁 Utils library for npm.",
+  "description": "🧁 Utils library About npm.",
   "version": "0.1.0",
   "license": "MIT",
   "keywords": [
@@ -35,6 +35,7 @@
   "devDependencies": {
     "@kovsu/eslint-config-ts": "^0.2.0",
     "@types/node": "^18.11.14",
+    "@types/node-emoji": "^1.8.2",
     "eslint": "^8.29.0",
     "typescript": "^4.9.3",
     "unbuild": "^1.0.1",
@@ -45,6 +46,9 @@
   },
   "dependencies": {
     "cac": "^6.7.14",
+    "node-emoji": "^1.11.0",
+    "node-fetch-native": "^1.0.1",
+    "picocolors": "^1.0.0",
     "pkg-types": "^1.0.1"
   }
 }

@@ -1,22 +1,33 @@
 import cac from "cac";
+import pc from "picocolors";
+import emoji from "node-emoji";
 import { version } from "./utils/getVersion";
+import { check } from "./utils/checkName";
 
 const cli = cac();
 
 cli.on("command:*", () => {
-  console.error("Invalid command: %s", cli.args.join(" "));
+  console.log("Invalid command: %s", cli.args.join(" "));
   process.exit(1);
 });
 
 export async function main() {
-  cli
-    .command("-p <pkgName>", "Provide a package name")
-    .action((pkgName, options) => {
-      console.log(pkgName, options);
-    });
+  cli.option("-c", "Check dependencies");
+  cli.option("-t", "Check type declarations");
+  cli.option("-p <pkgName>", "Provide a package name");
 
   cli.help();
   cli.version(await version());
 
-  cli.parse();
+  const parsed = cli.parse();
+  console.log(parsed.options);
+
+  if (parsed.options.p) {
+    // true => invalid pkg name
+    const res = await check(parsed.options.p);
+    if (!res)
+      console.log(pc.green(`${emoji.get(":heart_eyes:")} Valid package name`));
+    else
+      console.log(pc.red(`${emoji.get(":persevere:")} Invalid package name`));
+  }
 }

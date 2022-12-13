@@ -3,8 +3,12 @@ lockfileVersion: 5.4
 specifiers:
   '@kovsu/eslint-config-ts': ^0.2.0
   '@types/node': ^18.11.14
+  '@types/node-emoji': ^1.8.2
   cac: ^6.7.14
   eslint: ^8.29.0
+  node-emoji: ^1.11.0
+  node-fetch-native: ^1.0.1
+  picocolors: ^1.0.0
   pkg-types: ^1.0.1
   typescript: ^4.9.3
   unbuild: ^1.0.1
@@ -12,11 +16,15 @@ specifiers:
 
 dependencies:
   cac: 6.7.14
+  node-emoji: 1.11.0
+  node-fetch-native: 1.0.1
+  picocolors: 1.0.0
   pkg-types: 1.0.1
 
 devDependencies:
   '@kovsu/eslint-config-ts': 0.2.0_ha6vam6werchizxrnqvarmz2zu
   '@types/node': 18.11.14
+  '@types/node-emoji': 1.8.2
   eslint: 8.29.0
   typescript: 4.9.4
   unbuild: 1.0.2
@@ -696,6 +704,10 @@ packages:
     resolution: {integrity: sha512-W864tg/Osz1+9f4lrGTZpCSO5/z4608eUp19tbozkq2HJK6i3z1kT0H9tlADXuYIb1YYOBByU4Jsqkk75q48qA==}
     dependencies:
       '@types/unist': 2.0.6
+    dev: true
+
+  /@types/node-emoji/1.8.2:
+    resolution: {integrity: sha512-PfF1qL/9veo8BSHLV84C9ORNr3lHSlnWJ6yU8OdNufoftajeWHTLVbGHvp2B7e7DPDS9gMs6cfeSsqo5rqSitg==}
     dev: true
 
   /@types/node/18.11.14:
@@ -2429,7 +2441,6 @@ packages:
 
   /lodash/4.17.21:
     resolution: {integrity: sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==}
-    dev: true
 
   /loupe/2.3.6:
     resolution: {integrity: sha512-RaPMZKiMy8/JruncMU5Bt6na1eftNoo++R4Y+N2FrxkDVTrGvcyzFTsaGif4QTeKESheMGegbhw6iUAq+5A8zA==}
@@ -2585,6 +2596,16 @@ packages:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
     dev: true
 
+  /node-emoji/1.11.0:
+    resolution: {integrity: sha512-wo2DpQkQp7Sjm2A0cq+sN7EHKO6Sl0ctXeBdFZrL9T9+UywORbufTcTZxom8YqpLQt/FqNMUkOpkZrJVYSKD3A==}
+    dependencies:
+      lodash: 4.17.21
+    dev: false
+
+  /node-fetch-native/1.0.1:
+    resolution: {integrity: sha512-VzW+TAk2wE4X9maiKMlT+GsPU4OMmR1U9CrHSmd3DFLn2IcZ9VJ6M6BBugGfYUnPCLSYxXdZy17M0BEJyhUTwg==}
+    dev: false
+
   /node-releases/2.0.6:
     resolution: {integrity: sha512-PiVXnNuFm5+iYkLBNeq5211hvO38y63T0i2KKh2KnUs3RpzJ+JtODFjkD8yjLwnDkTYF1eKXheUwdssR+NRZdg==}
     dev: true
@@ -2738,7 +2759,6 @@ packages:
 
   /picocolors/1.0.0:
     resolution: {integrity: sha512-1fygroTLlHu66zi26VoTDv8yRgm0Fccecssto+MhsZ0D/DGW2sm8E8AjW7NU5VVTRt5GxbeZ5qBuJr+HyLYkjQ==}
-    dev: true
 
   /picomatch/2.3.1:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
