@@ -20,7 +20,6 @@ export async function main() {
   cli.version(await version());
 
   const parsed = cli.parse();
-  console.log(parsed.options);
 
   if (parsed.options.p) {
     // true => invalid pkg name
