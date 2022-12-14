@@ -8,7 +8,7 @@ export async function checkName(pkgName: string) {
 }
 
 function wrap(isValid: boolean, p: string) {
-  if (isValid)
+  if (!isValid)
     return pc.green(`  ${p} : ${emoji.get(":heart_eyes:")} Valid package name\n`);
   else
     return pc.red(`  ${p} : ${emoji.get(":persevere:")} Invalid package name \n`);

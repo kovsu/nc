@@ -6,7 +6,8 @@ export async function checkTypes() {
   const pkgPath = process.cwd();
   const res = await (await readPackageJSON(pkgPath));
 
-  const dependencies = Object.keys(Object.assign(res.dependencies!, res.devDependencies));
+  const allDependencies = Object.keys(Object.assign(res.dependencies || {}, res.devDependencies));
+  const dependencies = filterTypeDeclaration(allDependencies);
   const needDeclaration: string[] = [];
 
   for (const d of dependencies) {
@@ -44,4 +45,14 @@ function wrap(deps: string[]) {
     str += ` @types/${d}`;
 
   return deps.length > 0 ? pc.red(str) : pc.green(str);
+}
+
+function filterTypeDeclaration(pkgs: string[]) {
+  const res = [];
+  for (const p of pkgs) {
+    if (!pkgs.includes(`@types/${p}`))
+      res.push(p);
+  }
+
+  return res;
 }
