@@ -10,21 +10,21 @@ npm i @kovsun/nc -g
 
 View the latest version of dependencies in package.json.
 
-<img src="./snapshot/1.jpg" />
+<img src="./screenshot/1.jpg" />
 
 ### nc -t [...pkgName]
 
 Check whether the dependencies in package.json require type declarations.
-<img src="./snapshot/2.jpg" />
-<img src="./snapshot/3.jpg" />
+<img src="./screenshot/2.jpg" />
+<img src="./screenshot/3.jpg" />
 
 
 ### nc -p [...pkgName]
 
 Check whether the package name already exists in npm.
 
-<img src="./snapshot/4.jpg" />
-<img src="./snapshot/5.jpg" />
+<img src="./screenshot/4.jpg" />
+<img src="./screenshot/5.jpg" />
 
 
 
