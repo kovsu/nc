@@ -12,14 +12,14 @@ View the latest version of dependencies in package.json.
 
 <img src="./snapshot/1.jpg" />
 
-### nc -t
+### nc -t [...pkgName]
 
 Check whether the dependencies in package.json require type declarations.
 <img src="./snapshot/2.jpg" />
 <img src="./snapshot/3.jpg" />
 
 
-### nc -p pkg-name
+### nc -p [...pkgName]
 
 Check whether the package name already exists in npm.
 
