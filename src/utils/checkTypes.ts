@@ -6,7 +6,7 @@ export async function checkTypes() {
   const pkgPath = process.cwd();
   const res = await (await readPackageJSON(pkgPath));
 
-  const allDependencies = Object.keys(Object.assign(res.dependencies || {}, res.devDependencies));
+  const allDependencies = Object.keys(Object.assign(res.dependencies || {}, res.devDependencies || {}));
   const dependencies = filterTypeDeclaration(allDependencies);
   const needDeclaration: string[] = [];
 

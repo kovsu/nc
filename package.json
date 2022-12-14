@@ -3,7 +3,7 @@
   "type": "module",
   "author": "Konv Suu <2583695112@qq.com>",
   "description": "🧁 Utils library About npm.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "license": "MIT",
   "keywords": [
     "typescript",
